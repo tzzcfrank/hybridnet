@@ -109,7 +109,7 @@ func (c *FakeRemoteEndpointSlices) UpdateStatus(ctx context.Context, remoteEndpo
 // Delete takes name of the remoteEndpointSlice and deletes it. Returns an error if one occurs.
 func (c *FakeRemoteEndpointSlices) Delete(ctx context.Context, name string, opts v1.DeleteOptions) error {
 	_, err := c.Fake.
-		Invokes(testing.NewRootDeleteActionWithOptions(remoteendpointslicesResource, name, opts), &multiclusterv1.RemoteEndpointSlice{})
+		Invokes(testing.NewRootDeleteAction(remoteendpointslicesResource, name), &multiclusterv1.RemoteEndpointSlice{})
 	return err
 }
 

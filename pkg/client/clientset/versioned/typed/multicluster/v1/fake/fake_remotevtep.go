@@ -109,7 +109,7 @@ func (c *FakeRemoteVteps) UpdateStatus(ctx context.Context, remoteVtep *multiclu
 // Delete takes name of the remoteVtep and deletes it. Returns an error if one occurs.
 func (c *FakeRemoteVteps) Delete(ctx context.Context, name string, opts v1.DeleteOptions) error {
 	_, err := c.Fake.
-		Invokes(testing.NewRootDeleteActionWithOptions(remotevtepsResource, name, opts), &multiclusterv1.RemoteVtep{})
+		Invokes(testing.NewRootDeleteAction(remotevtepsResource, name), &multiclusterv1.RemoteVtep{})
 	return err
 }
 

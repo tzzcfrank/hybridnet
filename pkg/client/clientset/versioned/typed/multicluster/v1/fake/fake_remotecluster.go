@@ -109,7 +109,7 @@ func (c *FakeRemoteClusters) UpdateStatus(ctx context.Context, remoteCluster *mu
 // Delete takes name of the remoteCluster and deletes it. Returns an error if one occurs.
 func (c *FakeRemoteClusters) Delete(ctx context.Context, name string, opts v1.DeleteOptions) error {
 	_, err := c.Fake.
-		Invokes(testing.NewRootDeleteActionWithOptions(remoteclustersResource, name, opts), &multiclusterv1.RemoteCluster{})
+		Invokes(testing.NewRootDeleteAction(remoteclustersResource, name), &multiclusterv1.RemoteCluster{})
 	return err
 }
 

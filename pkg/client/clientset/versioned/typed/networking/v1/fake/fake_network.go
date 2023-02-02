@@ -109,7 +109,7 @@ func (c *FakeNetworks) UpdateStatus(ctx context.Context, network *networkingv1.N
 // Delete takes name of the network and deletes it. Returns an error if one occurs.
 func (c *FakeNetworks) Delete(ctx context.Context, name string, opts v1.DeleteOptions) error {
 	_, err := c.Fake.
-		Invokes(testing.NewRootDeleteActionWithOptions(networksResource, name, opts), &networkingv1.Network{})
+		Invokes(testing.NewRootDeleteAction(networksResource, name), &networkingv1.Network{})
 	return err
 }
 

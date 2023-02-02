@@ -109,7 +109,7 @@ func (c *FakeRemoteSubnets) UpdateStatus(ctx context.Context, remoteSubnet *mult
 // Delete takes name of the remoteSubnet and deletes it. Returns an error if one occurs.
 func (c *FakeRemoteSubnets) Delete(ctx context.Context, name string, opts v1.DeleteOptions) error {
 	_, err := c.Fake.
-		Invokes(testing.NewRootDeleteActionWithOptions(remotesubnetsResource, name, opts), &multiclusterv1.RemoteSubnet{})
+		Invokes(testing.NewRootDeleteAction(remotesubnetsResource, name), &multiclusterv1.RemoteSubnet{})
 	return err
 }
 
